@@ -95,20 +95,22 @@ df12345 = pd.merge(df1234,df5,how='left',on='SCORETYPEID')
 #df12345 = df12345[['SCORETYPEID','SCORETYPENAME','SAMINDUSTRYNAME','SAMINDUSTRYID','SCOREVALUE']]
 #merging datasets 1,2,3,4, and 5
 df = pd.merge(df12345,df6,how='left',on=['ASPECTID','SAMINDUSTRYID'])
-df = df[['ASPECTID','ASPECTNAME']]
-df = df.loc[(df['ASPECTID']==107) | (df['ASPECTID']==108) | (df['ASPECTID']==114) | (df['ASPECTID']==124)]
-df = df.groupby(by="ASPECTID")
-print(df)
+# df = df[['ASPECTID','ASPECTNAME']]
+# df = df.loc[(df['ASPECTID']==107) | (df['ASPECTID']==108) | (df['ASPECTID']==114) | (df['ASPECTID']==124)]
+# df = df.sort_values(by='ASPECTID').drop_duplicates()
+# print(df)
 
 #only filtering out REA Real Estate
-dfREAL = df[df["SAMINDUSTRYNAME"]=='REA Real Estate']
-# dfRE = dfRE[['SCOREID','INSTITUTIONID','ASPECTID','SAMINDUSTRYNAME','SCOREVALUE']]
-# dfRE = dfRE.sort_values(by='SCOREVALUE', ascending=False).head(3)
-print(dfREAL.head())
+# dfREAL = df.loc[df["SAMINDUSTRYNAME"]=='REA Real Estate']
+# dfREAL = dfREAL[['SCOREID','INSTITUTIONID','ASPECTID','SAMINDUSTRYNAME','SCOREVALUE']]
+# dfREAL = dfREAL.sort_values(by='SCOREVALUE', ascending=False).head(3)
+# print(dfREAL)
+
 #filtering out Assessment Year = 2020 and grouping by industry and making it descending order
-yr_2020 = df.loc[df["ASSESSMENTYEAR"]==2020]
-yr_2020 = yr_2020.sort_values(by='SCOREVALUE', ascending=False).groupby(by='SAMINDUSTRYID').head(3)
-print(yr_2020)
+# yr_2020 = df.loc[df["ASSESSMENTYEAR"]==2020]
+# yr_2020 = yr_2020.sort_values(by='SCOREVALUE', ascending=False).groupby(by='SAMINDUSTRYID').head(3)
+# print(yr_2020)
+
 # for line in df:
 #     print(line)
 # t = df.iloc[1:3]
