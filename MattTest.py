@@ -35,6 +35,9 @@ try:
         SELECT * FROM "MI_XPRESSCLOUD"."XPRESSFEED"."CIQEXCHANGERATE";
         """
     df = pd.read_sql(sql, conn)
-    print(df.head())
+    testplot = df.iloc[1:3]
+    plt.plot(testplot["PRICEDATE"],testplot["PRICECLOSE"])
+    plt.show()
+
 except Exception as e:
     print(e)
