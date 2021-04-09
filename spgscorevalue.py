@@ -95,10 +95,10 @@ df12345 = pd.merge(df1234,df5,how='left',on='SCORETYPEID')
 #df12345 = df12345[['SCORETYPEID','SCORETYPENAME','SAMINDUSTRYNAME','SAMINDUSTRYID','SCOREVALUE']]
 #merging datasets 1,2,3,4, and 5
 df = pd.merge(df12345,df6,how='left',on=['ASPECTID','SAMINDUSTRYID'])
-# df = df[['ASPECTID','ASPECTNAME']]
-# df = df.loc[(df['ASPECTID']==107) | (df['ASPECTID']==108) | (df['ASPECTID']==114) | (df['ASPECTID']==124)]
-# df = df.groupby(by="ASPECTID")
-# print(df.head(10))
+df = df[['ASPECTID','ASPECTNAME']]
+df = df.loc[(df['ASPECTID']==107) | (df['ASPECTID']==108) | (df['ASPECTID']==114) | (df['ASPECTID']==124)]
+df = df.groupby(by="ASPECTID")
+print(df)
 
 #only filtering out REA Real Estate
 dfREAL = df[df["SAMINDUSTRYNAME"]=='REA Real Estate']
